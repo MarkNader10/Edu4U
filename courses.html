@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جميع الكورسات | Edu4U</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="courses.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <span class="logo-text">Edu4U</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="home.html" data-lang="nav-home">الرئيسية</a></li>
+            <li><a href="my_courses.html" data-lang="nav-mycourses">كورساتي</a></li>
+            <li><a href="courses.html" class="active" data-lang="nav-courses">جميع الكورسات</a></li> 
+            <li><a href="calculator.html" data-lang="nav-calc">الحاسبة</a></li>
+        </ul>
+
+        <div class="nav-icons-group">
+            <div class="account-dropdown">
+                <button class="nav-icon-btn account-btn" title="Account">
+                    <i class="fas fa-user-circle"></i> 
+                </button>
+                <div class="dropdown-content">
+                    <a href="profile.html" data-lang="acc-profile">حسابي</a>
+                    <a href="login.html" data-lang="acc-logout">تسجيل الخروج</a>
+                </div>
+            </div>
+            <button id="lang-toggle" class="nav-icon-btn" title="Change Language">
+                <i class="fas fa-globe"></i>
+            </button>
+            <button id="theme-toggle" class="nav-icon-btn" title="Toggle Light/Dark Mode">
+                <img id="theme-img" src="icons/moon.png">
+            </button>
+        </div>
+    </nav>
+    <main class="courses-page-content">
+        
+        <div class="top-filters-row">
+            
+            <div class="course-count-info">
+                <h1>عرض <span id="displayed-count">3</span> كورسات</h1>
+            </div>
+
+            <div class="search-box">
+                <input type="text" id="course-search" placeholder="ابحث باسم الكورس...">
+                <i class="fas fa-search"></i>
+            </div>
+            
+        </div>
+
+        <section class="courses-grid-container full-width">
+            <div class="courses-grid" id="courses-list">
+                
+                <div class="course-card">
+                    <div class="course-image-container">
+                        <img src="images/html.avif" alt="مقدمة في HTML" class="course-img"> 
+                    </div>
+                    <div class="course-info">
+                        <h3 class="course-title">مقدمة في HTML</h3>
+                        <p class="course-description">وصف صغير: تعلم أساسيات بناء صفحات الويب وتصميم المواقع الحديثة.</p>
+                        <div class="course-stats">
+                            <span class="stat-item">
+                                <i class="fab fa-youtube"></i> 
+                                <span class="stat-value">6</span> فيديو
+                            </span>
+                            <span class="stat-item">
+                                <i class="far fa-clock"></i> 
+                                <span class="stat-value">7</span> ساعة
+                            </span>
+                        </div>
+                        <a href="#" class="enroll-btn free" data-lang="enroll-free">مجاناً</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image-container">
+                        <img src="images/javascript.webp" alt="أساسيات JavaScript" class="course-img"> 
+                    </div>
+                    <div class="course-info">
+                        <h3 class="course-title">أساسيات JavaScript</h3>
+                        <p class="course-description">وصف صغير: ابدأ رحلتك في تعلم لغة JS لجعل موقعك تفاعليًا وحيويًا.</p>
+                        <div class="course-stats">
+                            <span class="stat-item">
+                                <i class="fab fa-youtube"></i> 
+                                <span class="stat-value">11</span> فيديو
+                            </span>
+                            <span class="stat-item">
+                                <i class="far fa-clock"></i> 
+                                <span class="stat-value">17.5</span> ساعة
+                            </span>
+                        </div>
+                        <a href="#" class="enroll-btn free" data-lang="enroll-free">مجاناً</a>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-image-container">
+                        <img src="images/css.jpg" alt="برمجة CSS للمبتدئين" class="course-img"> 
+                    </div>
+                    <div class="course-info">
+                        <h3 class="course-title">برمجة CSS للمبتدئين</h3>
+                        <p class="course-description">وصف صغيرفي الـ Playlist دي هتتعلم CSS بشكل كامل، من البداية لحد الاحتراف.</p>
+                        <div class="course-stats">
+                            <span class="stat-item">
+                                <i class="fab fa-youtube"></i> 
+                                <span class="stat-value">10</span> فيديو
+                            </span>
+                            <span class="stat-item">
+                                <i class="far fa-clock"></i> 
+                                <span class="stat-value">1</span> ساعة
+                            </span>
+                        </div>
+                        <a href="#" class="enroll-btn free" data-lang="enroll-free">مجاناً</a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
+
+    <script src="home.js"></script>
+    <script src="courses.js"></script>
+</body>
+</html>

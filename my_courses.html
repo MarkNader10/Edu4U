@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang="nav-mycourses">كورساتي | Edu4U</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="courses.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        .my-courses-header {
+            text-align: center;
+            padding-top: 150px; 
+            padding-bottom: 30px; 
+        }
+        .my-courses-header h1 {
+            font-size: 2.5em;
+            color: var(--primary-color);
+        }
+        /* تصميم شريط التقدم (Progress Bar) */
+        .progress-bar {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .progress {
+            height: 20px;
+            background-color: #4CAF50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 5px;
+            transition: width 0.5s;
+            font-size: 0.8em;
+        }
+        
+        /* تنسيق زر "دخول" الجديد */
+        .enroll-btn.access {
+            background-color: #009688; 
+            color: white;
+        }
+        .enroll-btn.access:hover {
+            background-color: #00796B; 
+        }
+        .no-courses-message {
+            font-size: 1.2em; 
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <span class="logo-text">Edu4U</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="home.html" data-lang="nav-home">الرئيسية</a></li>
+            <li class="active-link"><a href="my_courses.html" class="active" data-lang="nav-mycourses">كورساتي</a></li>
+            <li><a href="courses.html" data-lang="nav-courses">جميع الكورسات</a></li> 
+            <li><a href="calculator.html" data-lang="nav-calc">الحاسبة</a></li>
+        </ul>
+
+        <div class="nav-icons-group">
+            <div class="account-dropdown">
+                <button class="nav-icon-btn account-btn" title="Account">
+                    <i class="fas fa-user-circle"></i> 
+                </button>
+                <div class="dropdown-content">
+                    <a href="profile.html" data-lang="acc-profile">حسابي</a>
+                    <a href="login.html" data-lang="acc-logout">تسجيل الخروج</a>
+                </div>
+            </div>
+            <button id="lang-toggle" class="nav-icon-btn" title="Change Language">
+                <i class="fas fa-globe"></i>
+            </button>
+            <button id="theme-toggle" class="nav-icon-btn" title="Toggle Light/Dark Mode">
+                <img id="theme-img" src="icons/moon.png" alt="theme">
+            </button>
+        </div>
+    </nav>
+    <main class="courses-page-content" id="my-courses-page">
+        <div class="my-courses-header">
+            <h1 data-lang="my-courses-title">كورساتي</h1> 
+        </div>
+        
+        <section class="courses-grid-container full-width">
+            <div class="courses-grid" id="my-courses-list">
+                </div>
+        </section>
+
+    </main>
+
+    <script src="home.js"></script> 
+    <script src="my_courses.js"></script> 
+</body>
+</html>

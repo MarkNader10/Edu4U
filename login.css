@@ -1,0 +1,163 @@
+:root {
+    --bg-color: #f4f4f4;       
+    --container-bg: #ffffff;   
+    --text-color: #333333;     
+    --input-bg: #eeeeee;       
+    --input-border: #cccccc;   
+    --primary-color: #4caf50;  
+    --btn-text: #ffffff;
+    --welcome-text-color: #1a1a1a; 
+    --link-color: #007bff;
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --container-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --input-bg: #2c2c2c;
+    --input-border: #444444;
+    --primary-color: #66bb6a;
+    --welcome-text-color: #ffffff;
+    --link-color: #8ab4f8;
+}
+
+body {
+    background: url('images/rm373batch13-085.jpg') no-repeat center center fixed;
+    background-size: cover;
+    
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.main-split-container {
+    display: flex;
+    direction: rtl;
+    width: 900px;
+    height: 550px;
+    background-color: var(--bg-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.welcome-text-panel {
+    flex: 1;
+    padding: 30px;
+    background-color: var(--container-bg);
+    color: var(--welcome-text-color); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+    border-top-right-radius: 15px;
+}
+
+.welcome-text-panel h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.feature-box {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--input-border);
+}
+
+.feature-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: var(--text-color);
+}
+
+body.dark-mode .welcome-text-panel {
+    background-color: var(--container-bg);
+}
+body.dark-mode .feature-box p {
+    color: var(--text-color);
+}
+
+.login-container {
+    width: 380px; 
+    background-color: var(--container-bg);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 2px solid var(--input-border);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--text-color);
+    border-radius: 5px;
+    box-sizing: border-box; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    opacity: 0.9;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+body.dark-mode a {
+    color: var(--link-color);
+}
+
+/* أيقونات اللغة والوضع */
+.top-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+}
+
+.lang-icon, .theme-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.lang-icon:hover, .theme-icon:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 5px #00f);
+}

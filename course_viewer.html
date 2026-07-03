@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاهدة الكورس | Edu4U</title> 
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="course_viewer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* إضافة تنسيقات بسيطة هنا لضمان عملها فوراً */
+        .viewer-container {
+            display: flex;
+            gap: 20px;
+            padding: 100px 5% 30px;
+            min-height: 100vh;
+        }
+        .video-player-section {
+            flex: 3; /* مساحة أكبر للفيديو */
+        }
+        .video-player-section iframe {
+            width: 100%;
+            height: 500px; /* حجم جيد للفيديو */
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .playlist-section {
+            flex: 1; /* مساحة أقل لقائمة التشغيل */
+            background-color: var(--navbar-bg);
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto; /* للتمرير إذا كانت القائمة طويلة */
+            max-height: calc(100vh - 150px);
+        }
+        .playlist-section h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            font-size: 1.5em;
+        }
+        .video-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s, opacity 0.2s;
+            color: var(--text-color);
+            font-size: 0.95em;
+        }
+        .video-item:hover:not(.completed):not(.active) {
+            background-color: #f0f0f0;
+        }
+        body.dark-mode .video-item:hover:not(.completed):not(.active) {
+            background-color: #2e2e2e;
+        }
+        .video-item.active {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: bold;
+        }
+        .video-item.completed {
+            opacity: 0.6;
+            text-decoration: line-through;
+        }
+        .video-item span {
+            margin-left: 10px;
+        }
+        .thumbnail-container {
+    position: relative;
+    width: 100%;
+    height: 500px; /* نفس ارتفاع الـ iframe */
+    cursor: pointer;
+    background-color: black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.video-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+}
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play-overlay i {
+    font-size: 60px;
+    color: white;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s;
+}
+.thumbnail-container:hover .play-overlay i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <span class="logo-text">Edu4U</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="home.html" data-lang="nav-home">الرئيسية</a></li>
+            <li><a href="my_courses.html" data-lang="nav-mycourses">كورساتي</a></li>
+            <li><a href="courses.html" data-lang="nav-courses">جميع الكورسات</a></li> 
+            <li><a href="calculator.html" data-lang="nav-calc">الحاسبة</a></li>
+        </ul>
+
+        <div class="nav-icons-group">
+            <div class="account-dropdown">
+                <button class="nav-icon-btn account-btn" title="Account">
+                    <i class="fas fa-user-circle"></i> 
+                </button>
+                <div class="dropdown-content">
+                    <a href="profile.html" data-lang="acc-profile">حسابي</a>
+                    <a href="login.html" data-lang="acc-logout">تسجيل الخروج</a>
+                </div>
+            </div>
+            <button id="lang-toggle" class="nav-icon-btn" title="Change Language">
+                <i class="fas fa-globe"></i>
+            </button>
+            <button id="theme-toggle" class="nav-icon-btn" title="Toggle Light/Dark Mode">
+                <img id="theme-img" src="icons/moon.png">
+            </button>
+        </div>
+    </nav>
+    <div class="viewer-container">
+        
+        <div class="video-player-section">
+            <h1 id="course-title-header">تحميل الكورس...</h1>
+            <iframe id="main-video-iframe" 
+                    src="" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+            </iframe>
+            
+            <button id="mark-completed-btn" 
+                    style="padding: 10px 20px; background-color: var(--secondary-color); color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+                    تعليم كـ"مشاهد"
+            </button>
+        </div>
+        <iframe id="main-video-iframe" 
+        src="" 
+        frameborder="0" 
+        allow="autoplay; encrypted-media" 
+        allowfullscreen
+        style="display: none;"> </iframe>
+
+<div id="thumbnail-container" class="thumbnail-container">
+    <img id="video-thumbnail-img" src="" alt="Video Thumbnail" class="video-thumbnail">
+    <div id="play-overlay" class="play-overlay">
+        <i class="fas fa-play"></i>
+    </div>
+</div>
+        <div class="playlist-section">
+            <h2 data-lang="playlist-title">قائمة الفيديوهات</h2>
+            <div id="video-list">
+                </div>
+        </div>
+        
+    </div>
+
+    <script src="home.js"></script> 
+    <script src="course_viewer.js"></script>
+</body>
+</html>

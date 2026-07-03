@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - Edu4U</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="top-icons">
+        <!-- أيقونة اللغة واحدة -->
+        <img src="icons/planet.png" alt="لغة" id="lang-toggle" class="lang-icon">
+        <!-- أيقونة الوضع -->
+        <img src="icons/moon.png" alt="الوضع الليلي" id="theme-toggle" class="theme-icon">
+    </div>
+        
+   <div class="main-split-container">
+        <div class="welcome-text-panel">
+            <h1 id="welcome-title">"مرحباً بك في منصة التعليم لأجلك</h1>
+            
+            <div class="feature-box">
+                <h3 id="feature1-title">جاهز للبدء</h3>
+                <p id="feature1-text">ابدأ رحلتك التعليمية معنا واحصل على أفضل المهارات.</p>
+            </div>
+            
+            <div class="feature-box">
+                <h3 id="feature2-title">وفر وقتك</h3>
+                <p id="feature2-text">تعلم في أي وقت ومن أي مكان بسهولة وراحة.</p>
+            </div>
+        </div>
+    <div class="login-container">
+            <h2 id="login-title">تسجيل الدخول</h2>
+          <form action="dashboard.php" method="POST">
+                <div class="input-group">
+                    <label for="email" id="email-label">البريد الإلكتروني</label>
+                    <input type="email" id="email" name="email" required placeholder="example@email.com">
+                </div>
+    <div class="input-group">
+                    <label for="password" id="password-label">كلمة المرور</label>
+                    <input type="password" id="password" name="password" required placeholder="********">
+                </div>
+
+           <button type="submit" class="login-btn" id="login-btn">تسجيل الدخول</button>
+            
+                  <p class="register-link" id="register-text">ليس لديك حساب؟ <a href="register.html" id="register-link">سجل الآن</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>

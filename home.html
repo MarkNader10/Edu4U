@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu4U Dashboard</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-logo">
+            <span class="logo-text"></span>
+        </div>
+
+       <ul class="nav-links">
+    <li><a href="home.html" class="active" data-lang="nav-home">الرئيسية</a></li>
+    <li><a href="my_courses.html" data-lang="nav-mycourses">كورساتي</a></li>
+    <li><a href="courses.html" data-lang="nav-courses">جميع الكورسات</a></li>
+    <li><a href="calculator.html" data-lang="nav-calc">الحاسبة</a></li>
+</ul>
+
+        <div class="nav-icons-group">
+            
+            <div class="account-dropdown">
+                <button class="nav-icon-btn account-btn" title="Account">
+                    <i class="fas fa-user-circle"></i> 
+                </button>
+                <div class="dropdown-content">
+                    <a href="profile.html" data-lang="acc-profile">حسابي</a>
+                    <a href="login.html" data-lang="acc-logout">تسجيل الخروج</a>
+                </div>
+            </div>
+
+            <button id="lang-toggle" class="nav-icon-btn" title="Change Language">
+                <i class="fas fa-globe"></i>
+            </button>
+
+            <button id="theme-toggle" class="nav-icon-btn" title="Toggle Light/Dark Mode">
+                <img id="theme-img" src="icons/moon.png" alt="theme">
+            </button>
+        </div>
+    </nav>
+
+    <main class="content-area">
+        <div class="hero-container">
+            
+            <div class="hero-text">
+                <h1 data-lang="hero-title">منصة <span class="brand-name">Edu4U</span> التعليمية</h1>
+                <p data-lang="hero-desc">
+                    Edu4U هي المنصة الأولى والوحيدة اللي هتساعدك تحول البرمجة جزء أساسي من يومك، معانا هتعيش رحلة تعلم ممتعة مليانة تحديات.
+                </p>
+               <button id="start-learning-btn" class="cta-btn" data-lang="hero-btn">ابدأ التعلم الآن</button>
+            </div>
+
+            <div class="hero-image">
+                <div class="big-logo-display"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="home.js"></script>
+</body>
+</html>
